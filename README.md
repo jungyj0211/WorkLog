@@ -4,6 +4,8 @@
 
 ## 📄 문서 목록
 
+- [08월 21일 work log](./workLog/250821.md)
+- [08월 20일 work log](./workLog/250820.md)
 - [08월 19일 work log](./workLog/250819.md)
 - [08월 18일 work log](./workLog/250818.md)
 - [08월 14일 work log](./workLog/250814.md)
