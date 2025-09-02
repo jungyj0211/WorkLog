@@ -4,6 +4,7 @@
 
 ## 📄 문서 목록
 
+- [09월 02일 work log](./workLog/250902.md)
 - [09월 01일 work log](./workLog/250901.md)
 - [08월 29일 work log](./workLog/250829.md)
 - [08월 28일 work log](./workLog/250828.md)
