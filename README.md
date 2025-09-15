@@ -4,6 +4,8 @@
 
 ## 📄 문서 목록
 
+- [09월 15일 work log](./workLog/250915.md)
+- [09월 12일 work log](./workLog/250912.md)
 - [09월 10일 work log](./workLog/250910.md)
 - [09월 09일 work log](./workLog/250909.md)
 - [09월 08일 work log](./workLog/250908.md)
