@@ -1,0 +1,68 @@
+apiVersion: "nuclio.io/v1"
+kind: Function
+metadata:
+  name: yolo11-pose-12k
+  namespace: nuclio
+  labels:
+    nuclio.io/project-name: cvat
+  annotations:
+    name: YOLOv11 Pose (12 keypoints)
+    type: detector
+    spec: |
+      [
+        {
+          "name": "person",
+          "type": "skeleton",
+          "sublabels": [
+            {"name":"1","type":"points"},
+            {"name":"2","type":"points"},
+            {"name":"3","type":"points"},
+            {"name":"4","type":"points"},
+            {"name":"5","type":"points"},
+            {"name":"6","type":"points"},
+            {"name":"7","type":"points"},
+            {"name":"8","type":"points"},
+            {"name":"9","type":"points"},
+            {"name":"10","type":"points"},
+            {"name":"11","type":"points"},
+            {"name":"12","type":"points"}
+          ],
+          "svg": ""
+        }
+      ]
+spec:
+  runtime: "python"
+  handler: "main:handler"
+  description: "YOLOv11 pose (17->12 keypoints) for CVAT auto-annotation"
+  eventTimeout: 60s
+  build:
+    path: .                # ★ 중요: 없으면 build 못 함
+    baseImage: python:3.10-slim
+    commands:
+      - apt-get update && apt-get install -y libgl1 libglib2.0-0 && rm -rf /var/lib/apt/lists/*
+      - python -m pip install --no-cache-dir --upgrade pip
+      - python -m pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      - python -m pip install --no-cache-dir ultralytics opencv-python-headless pillow
+  triggers:
+    http:
+      kind: http
+      attributes:
+        maxRequestBodySize: 67108864
+      maxWorkers: 1
+  env:
+    - name: YOLO_MODEL_PATH
+      value: /opt/nuclio/model/yolo11m-pose.pt
+    - name: CONF_THRESHOLD
+      value: "0.25"
+    - name: KP_MODE
+      value: "12"
+    - name: LABEL_NAME         # ★ 함수 출력 라벨명
+      value: person
+  volumes:
+    - volume:
+        name: model-vol
+        hostPath:
+          path: /home/hananet_jung/cvat/serverless/custom-coco-yolov11m-pose-12k/nuclio/model
+      volumeMount:
+        name: model-vol
+        mountPath: /opt/nuclio/model
