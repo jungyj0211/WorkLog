@@ -8,6 +8,7 @@
 
 ### 📅 2025년 09월
 
+- [09월 30일 work log](./workLog/2025/09/250930.md)
 - [09월 25일 work log](./workLog/2025/09/250925.md)
 - [09월 24일 work log](./workLog/2025/09/250924.md)
 - [09월 23일 work log](./workLog/2025/09/250923.md)
