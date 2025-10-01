@@ -5,6 +5,9 @@
 ## ***<span style="color:#222222"> WorkLog. </span>*** ***<span style="color:#333333"> 하나하고 네엣? 14?</span>*** ***<span style="color:#880000"> One for You, 14U. </span>***
 ---
 
+### 📅 2025년 10월
+
+- [10월 01일 work log](./workLog/2025/10/251001.md)
 
 ### 📅 2025년 09월
 
