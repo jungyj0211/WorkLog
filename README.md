@@ -7,8 +7,8 @@
 
 ### 📅 2025년 10월
 
-- [10월 15일 work log](./workLog/2025/10/251013.md)
-- [10월 14일 work log](./workLog/2025/10/251013.md)
+- [10월 15일 work log](./workLog/2025/10/251015.md)
+- [10월 14일 work log](./workLog/2025/10/251014.md)
 - [10월 13일 work log](./workLog/2025/10/251013.md)
 - [10월 01일 work log](./workLog/2025/10/251001.md)
 
